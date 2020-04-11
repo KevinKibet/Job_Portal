@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <!--CSS-->
-<link rel="stylesheet" type="text/css" href="../plugins/home-plugins/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../plugins/home-plugins/css/fancybox/jquery.fancybox.css">
-<link rel="stylesheet" type="text/css" href="../plugins/home-plugins/css/flexslider.css">
-<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../plugins/dataTables/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="../plugins/dataTables/jquery.dataTables_themeroller.css">
-<link rel="stylesheet" type="text/css" href="../plugins/home-plugins/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/home-plugins/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/home-plugins/css/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/home-plugins/css/flexslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/dataTables/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/dataTables/jquery.dataTables_themeroller.css">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/home-plugins/css/style.css">
 <!--DateTime Picker CSS-->
 
-<link rel="stylesheet" type="text/css" href="../plugins/datepicker/bootstrap-datetimepicker.min.css" media="screen">
-<link rel="stylesheet" type="text/css" href="../plugins/datepicker/datepicker3.css" media="screen">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/datepicker/bootstrap-datetimepicker.min.css" media="screen">
+<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>plugins/datepicker/datepicker3.css" media="screen">
 
 <title>Job Portal</title>
 <style type="text/css">
@@ -46,7 +46,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="./index.php">Website Name</a>
+                    <a class="navbar-brand" href="./index.php">County Gov of Marsabit</a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -71,6 +71,7 @@
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='hiring'){ echo 'active'; }else{ echo ''; }} ?>"><a href="<?php echo web_root; ?>index.php?q=hiring">Hiring Now</a></li>
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='About'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=About">About Us</a></li>
                         <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='Contact'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=Contact">Contact</a></li>
+                        <li class="<?php  if(isset($_GET['q'])) { if($_GET['q']=='Register'){ echo 'active'; }else{ echo ''; }}  ?>"><a href="<?php echo web_root; ?>index.php?q=Register">Register</a></li>
 
                     </ul>
                 </div>
@@ -79,6 +80,30 @@
 
 	</header>
 <!--End of header--->
+
+
+<!--### PHP code  when user is not logedin-->
+
+<?php
+
+      if (isset($_GET['q'])) {
+        # code...
+        echo '<section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="pageTitle">'.$title.'</h2>
+                    </div>
+                </div>
+            </div>
+            </section>';
+      }
+
+
+       require_once $content;
+
+        ?>   
+
 
 <!---Start of footer-->
 
@@ -156,16 +181,16 @@
 <script src="../plugins/home-plugins/js/bootstrap.min.js"></script>
  
 
-<script type="text/javascript" src="../plugins/dataTables/dataTables.bootstrap.min.js" ></script>  
+<script type="text/javascript" src="<?php echo web_root; ?>plugins/dataTables/dataTables.bootstrap.min.js" ></script>  
 <script src="../plugins/datatables/jquery.dataTables.min.js"></script> 
 
-<script type="text/javascript" src="../plugins/datepicker/bootstrap-datepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="../plugins/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="../plugins/datepicker/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>plugins/datepicker/bootstrap-datepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>plugins/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>plugins/datepicker/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
 
-<script type="text/javascript" language="javascript" src="../plugins/input-mask/jquery.inputmask.js"></script> 
-<script type="text/javascript" language="javascript" src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script> 
-<script type="text/javascript" language="javascript" src="../plugins/input-mask/jquery.inputmask.extensions.js"></script> 
+<script type="text/javascript" language="javascript" src="<?php echo web_root; ?>plugins/input-mask/jquery.inputmask.js"></script> 
+<script type="text/javascript" language="javascript" src="<?php echo web_root; ?>plugins/input-mask/jquery.inputmask.date.extensions.js"></script> 
+<script type="text/javascript" language="javascript" src="<?php echo web_root; ?>plugins/input-mask/jquery.inputmask.extensions.js"></script> 
 
 <script src="../plugins/home-plugins/js/jquery.fancybox.pack.js"></script>
 <script src="../plugins/home-plugins/js/jquery.fancybox-media.js"></script>  
