@@ -121,7 +121,7 @@ img.img-polaroid {
 /*  Header
 ==================================== */
 .topbar{
-	background-color: #37393c;
+	background-color: #bbae20;
 	padding: 5px 0;
 	/* color:#fff; */
 	font-size: 11px !important;
@@ -979,10 +979,12 @@ blockquote cite a:visited 				{ color:#555; }
 	display:block;
 	color:#a2a2a2;
 	font-family:'Noto Serif', serif;
-	font-size:14px;
+	font-size:15px;
 	line-height:1.6em;
 	padding-right:20px;
 }
+
+
 
 /* --- button --- */
 .btn{text-align: center;color: #ffffff;padding: 12px 25px;border-radius: 0;background: #00bcd4;border-color: #00bcd4;}
@@ -1015,7 +1017,7 @@ ul.link-list li{
 	padding:2px 0 2px 0;
 	list-style:none;
 }
-footer{background: #282a2c;}
+footer{background: #a17031;}
 footer ul.link-list li a{
 	color: rgba(255, 255, 255, 0.63);
 }
