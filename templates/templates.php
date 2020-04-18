@@ -213,6 +213,52 @@ if(!isset($_SESSIION['APPLICANTID'])){
 <script src="<?php echo web_root; ?>plugins/home-plugins/js/custom.js"></script> 
 
 
+<script>
+  
+$("#btnlogin").click(function(){
+        var username = document.getElementById("user_email");
+        var pass = document.getElementById("user_pass");
+
+        // alert(username.value)
+        // alert(pass.value)
+        if(username.value=="" && pass.value==""){   
+          $('#loginerrormessage').fadeOut(); 
+                $('#loginerrormessage').fadeIn();  
+                $('#loginerrormessage').css({ 
+                        "background" :"red",
+                        "color"      : "#fff",
+                        "padding"    : "5px;"
+                    }); 
+          $("#loginerrormessage").html("username and password cannot be empty!");
+          //  $("#loginerrormessage").css(function(){ 
+          //   "background-color" : "red";
+          // });
+        }else{
+
+          $.ajax({    //create an ajax request to load_page.php
+              type:"POST",  
+              url: "process.php?action=login",    
+              dataType: "text",  //expect html to be returned  
+              data:{USERNAME:username.value,PASS:pass.value},//point to do login function in process.php               
+              success: function(data){   
+                // alert(data);
+                $('#loginerrormessage').fadeOut(); 
+                $('#loginerrormessage').fadeIn();  
+                $('#loginerrormessage').css({ 
+                        "background" :"red",
+                        "color"      : "#fff",
+                        "padding"    : "5px;"
+                    }); 
+               $('#loginerrormessage').html(data);   
+              } 
+              }); 
+          }
+        });
+
+
+
+</script>
+
 
 
 </body>

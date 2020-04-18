@@ -9,7 +9,8 @@ switch ($action) {
 		break;
 	
 	default:
-		# code...
+		case 'login':
+		doLogin();
 		break;
 }
 
@@ -62,6 +63,30 @@ function doRegister(){
 }
 }
 
+
+
+
+// handles login
+function doLogin(){
+	
+	$email = trim($_POST['USERNAME']);
+	$upass  = trim($_POST['PASS']);
+	$h_upass = sha1($upass);
+ 
+  //it creates a new objects of member
+    $applicant = new Applicants();
+    //make use of the static function, and we passed to parameters
+    $res = $applicant->applicantAuthentication($email, $h_upass);
+    if ($res==true) { 
+
+       	message("You are now successfully login!","success");
+       
+         redirect(web_root."applicant/");
+     
+    }else{
+    	 echo "Account does not exist! Please contact Administrator."; 
+    } 
+}
 
 
 

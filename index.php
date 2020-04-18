@@ -12,6 +12,11 @@ switch ($view) {
         $title="Register New Member";	
 		$content='register.php';		
 		break;
+
+	case 'login':
+	    $title="Login";
+	    $content='login.php';
+	    break;
 					
 	default :
 	    $active_home='active';

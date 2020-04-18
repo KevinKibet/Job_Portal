@@ -10,7 +10,7 @@
                   <h4 class="modal-title" id="myModalLabel">Login</h4>
                 </div>
 
-                <!-- <form action="process.php?action=login" enctype="multipart/form-data" method="post"> -->
+              <!--  <form action="process.php?action=login" enctype="multipart/form-data" method="post"> --->
                   <div class="modal-body hold-transition login-page">
                     <div id="loginerrormessage"></div>
                     <div class="login-box"> 
@@ -52,7 +52,7 @@
                     <button class="btn btn-default" data-dismiss="modal">Close</button> <button class="btn btn-primary"
                     name="btnlogin" id="btnlogin"  >Login</button>
                   </div>
-                <!-- </form> -->
+              <!-- </form> -->
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->

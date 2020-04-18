@@ -59,8 +59,24 @@ public function create() {
 	  }
 	}
 
-
-
+//authentication during login
+function applicantAuthentication($U_USERNAME,$h_pass){
+		global $mydb;
+		$mydb->setQuery("SELECT * FROM `tblapplicants` WHERE `USERNAME`='".$U_USERNAME."' AND `PASS`='".$h_pass."'");
+		$cur = $mydb->executeQuery();
+		if($cur==false){
+			die(mysql_error());
+		}
+		$row_count = $mydb->num_rows($cur);//get the number of count
+		 if ($row_count == 1){
+		 $emp_found = $mydb->loadSingleResult(); 
+		 	$_SESSION['APPLICANTID']   		= $emp_found->APPLICANTID; 
+		 	$_SESSION['USERNAME'] 			= $emp_found->USERNAME;  
+		   return true;
+		 }else{
+		 	return false;
+		 }
+	}
     
 
 }

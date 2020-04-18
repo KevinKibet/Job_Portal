@@ -130,7 +130,10 @@ public function escape_value( $value ) {
 		return $value;
    	}
 
-
+//gets the number or rows	
+public function num_rows($result_set) {
+		return mysqli_num_rows($result_set);
+	}
 
 
 
