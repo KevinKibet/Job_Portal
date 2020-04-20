@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #3c8dbc;
+}
+
+
+.logo {
+    background-color: #387ca3;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+/*.sidebar {
+
+	background-color: black;
+}
+
+.main-sidebar {
+
+	background-color: black;
+} */
+.main-footer {
+    background: #dbd2d2;
+    padding: 15px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+}

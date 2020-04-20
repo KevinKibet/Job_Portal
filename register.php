@@ -1,6 +1,6 @@
 <section id="content">
     <div class="container content">    
-    <!--phpcode later-->  
+     <p> <?php check_message();?></p>  
 		<form class="row form-horizontal span6  wow fadeInDown" action="process.php?action=register" method="POST">
 		<h2 class=" ">Personal Info</h2>
 		<div class="row"> 
