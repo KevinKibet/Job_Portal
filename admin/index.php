@@ -24,7 +24,7 @@ require_once("../include/initialize.php");
   //default :
  
      // $title="Home"; 
-   // $content ='home.php';    
+    $content ='home.php';    
 //}
 require_once("templates/templates.php");
 ?>

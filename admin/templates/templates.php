@@ -171,8 +171,8 @@
         </li> 
        
          
-         <li>
-          <a>
+         <li class="<?php echo (currentpage() == 'user') ? "active" : false;?>">
+          <a href="<?php echo web_root; ?>admin/user/">
             <i class="fa fa-user"></i> <span>Manage Users</span> </a>
         </li>
         
