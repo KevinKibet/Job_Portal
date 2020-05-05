@@ -10,6 +10,15 @@ switch ($action ) {
 		doInsert();
 		break;
 	
+    case 'edit':
+		doEdit();
+		break;
+
+
+     case 'delete':
+		doDelete();
+		break;
+
 	default:
 		# code...
 		break;
@@ -17,6 +26,51 @@ switch ($action ) {
 
 
 
+
+
+function doEdit(){
+	if(isset($_POST['save'])){
+
+
+			$user = New User(); 
+			$user->FULLNAME 		= $_POST['U_NAME'];
+			$user->USERNAME			= $_POST['U_USERNAME'];
+			$user->PASS				=sha1($_POST['U_PASS']);
+			$user->ROLE				= $_POST['U_ROLE'];
+			$user->update($_POST['USERID']);
+
+			
+
+
+			if (isset($_GET['view'])) {
+				# code...
+				  message("Profile has been updated!", "success");
+				redirect("index.php?view=view");
+			}else{ 
+				message("[". $_POST['U_NAME'] ."] has been updated!", "success");
+				redirect("index.php");
+			}
+		}
+	}
+
+
+
+
+
+function doDelete(){
+		
+		
+		$id = 	$_GET['id'];
+
+	    $user = New User();
+	 	$user->delete($id);
+			 
+		message("User has been deleted!","info");
+		redirect('index.php');
+	
+
+		
+	}
 
 
 

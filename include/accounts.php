@@ -47,6 +47,52 @@ function userAuthentication($USERNAME,$h_pass){
 
 
 
+public function update($id=0) {
+	  global $mydb;
+		$attributes = $this->sanitized_attributes();
+		$attribute_pairs = array();
+		foreach($attributes as $key => $value) {
+		  $attribute_pairs[] = "{$key}='{$value}'";
+		}
+		$sql = "UPDATE ".self::$tblname." SET ";
+		$sql .= join(", ", $attribute_pairs);
+		$sql .= " WHERE USERID=". $id;
+	  $mydb->setQuery($sql);
+	 	if(!$mydb->executeQuery()) return false; 	
+		
+	}
+
+
+
+
+
+public function delete($id=0) {
+		global $mydb;
+		  $sql = "DELETE FROM ".self::$tblname;
+		  $sql .= " WHERE USERID=". $id;
+		  $sql .= " LIMIT 1 ";
+		  $mydb->setQuery($sql);
+		  
+			if(!$mydb->executeQuery()) return false; 	
+	
+	}	
+
+
+
+
+function single_user($id=""){
+			global $mydb;
+			$mydb->setQuery("SELECT * FROM ".self::$tblname." 
+				Where USERID= '{$id}' LIMIT 1");
+			$cur = $mydb->loadSingleResult();
+			return $cur;
+	}
+
+
+
+
+
+
 protected function attributes() { 
 		// return an array of attribute names and their values
 	  global $mydb;

@@ -5,7 +5,7 @@
 
 ?> 
        	
-        <!--tt-->
+        <!--jj-->
    		 	<div class="col-lg-12"> 
             <div class="col-lg-12">
             <h1 class="page-header">List of Users  <a href="index.php?view=add" class="btn btn-primary btn-xs  ">  <i class="fa fa-plus-circle fw-fa"></i> Add User</a>  </h1>

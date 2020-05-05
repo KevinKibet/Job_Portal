@@ -219,10 +219,10 @@
               <div class="box">
                 <div class="box-body">
 
-             <!-- <?php 
+             <?php 
                check_message();
                require_once $content; 
-               ?> -->
+               ?> 
              </div>
              </div>
            </div>
@@ -237,7 +237,7 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b>1.1.0
+      <b></b>
     </div>
     <strong>Copyright &copy; 2020 <a>Job Portal</a>.</strong> All rights
     reserved.
