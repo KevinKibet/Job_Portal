@@ -15,14 +15,64 @@ switch ($action ) {
 		break;
 
 
-     case 'delete':
+    case 'delete':
 		doDelete();
 		break;
+
+	case 'photos':
+		doupdateimage();
+		break;	
 
 	default:
 		# code...
 		break;
 }
+
+
+
+
+
+
+
+function doupdateimage(){
+ 
+			$errofile = $_FILES['photo']['error'];
+			$type = $_FILES['photo']['type'];
+			$temp = $_FILES['photo']['tmp_name'];
+			$myfile =$_FILES['photo']['name'];
+		 	$location="photos/".$myfile;
+
+
+		if ( $errofile > 0) {
+				message("No Image Selected!", "error");
+				redirect("index.php?view=view&id=". $_GET['id']);
+		}else{
+	 
+				@$file=$_FILES['photo']['tmp_name'];
+				@$image= addslashes(file_get_contents($_FILES['photo']['tmp_name']));
+				@$image_name= addslashes($_FILES['photo']['name']); 
+				@$image_size= getimagesize($_FILES['photo']['tmp_name']);
+
+			if ($image_size==FALSE ) {
+				message("Uploaded file is not an image!", "error");
+				redirect("index.php?view=view&id=". $_GET['id']);
+			}else{
+					//uploading the file
+					move_uploaded_file($temp,"photos/" . $myfile);
+		 	
+					 
+
+						$user = New User();
+						$user->PICLOCATION 			= $location;
+						$user->update($_SESSION['ADMIN_USERID']);
+						redirect("index.php?view=view");
+						 
+							
+					}
+			}
+			 
+		}
+
 
 
 
