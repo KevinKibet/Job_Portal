@@ -147,11 +147,7 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>  
           </a> 
         </li> 
-        <li class="<?php echo (currentpage() == 'company') ? "active" : false;?>" >
-          <a href="<?php echo web_root ;?>admin/company/">
-            <i class="fa fa-building"></i> <span>Company</span> 
-          </a>
-        </li>
+       
         <li class="<?php echo (currentpage() == 'vacancy') ? "active" : false;?>" >
           <a href="<?php echo web_root ;?>admin/vacancy/">
             <i class="fa fa-suitcase"></i> <span>Vacancy</span> 

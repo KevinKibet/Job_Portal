@@ -18,4 +18,5 @@ require_once(LIB_PATH.DS."autonumbers.php");
 require_once(LIB_PATH.DS."session.php");
 require_once(LIB_PATH.DS."functions.php");
 require_once(LIB_PATH.DS."accounts.php");
+require_once(LIB_PATH.DS."job.php"); 
 ?>
