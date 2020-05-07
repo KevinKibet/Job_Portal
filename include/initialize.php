@@ -19,4 +19,6 @@ require_once(LIB_PATH.DS."session.php");
 require_once(LIB_PATH.DS."functions.php");
 require_once(LIB_PATH.DS."accounts.php");
 require_once(LIB_PATH.DS."job.php"); 
+require_once(LIB_PATH.DS."categories.php"); 
+require_once(LIB_PATH.DS."employees.php");
 ?>
